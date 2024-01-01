@@ -1,113 +1,81 @@
-import Image from 'next/image'
+  'use client'; // Mark this file as a Client Component
+  import React, { useState, useEffect } from 'react';
+  import Image from 'next/image';
+  import Man from '../assets/man.jpg';
+  import Homeimg  from '../assets/home.png';
+  import AboutImg from '../assets/about.png';
+  import ContactImg from '../assets/contactme.png';
+  import Projectimg from '../assets/project.png';
+  import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+  import 'react-vertical-timeline-component/style.min.css';
+  export default function Home() {
+    // const [Mode,setMode] = useState('black');
+    // const [Modebg,setModebg] = useState('white');
+    // const [Tmode,setTmode] = useState('Dark Mode');
+    // const toggleDarkMode=()=>{
+    //   setMode('white');
+    //   setModebg('black'); 
+    //   setTmode('Light Mode');
+    //   if(Mode == "white" && Modebg == "black"){
+    //     setMode('black');
+    //     setModebg('white');
+    //     setTmode('Dark Mode');
+    //   }
+    // }
+    // const [Text,setText] = useState('');
+    // const textarray = ["Web Developer","Youtuber","Amateur Photographer","Noob at Video Editing"];
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    return (
+      <>
+        <div className=' bg-lime-200 lg:h-20 sm:h-0 '>
+          {/* <a href='/' className='lg:mx-12 items-center sm:w-28  lg:h-12 lg:mt-5 lg:w-32  lg:text-lg font-semibold bg-red-300 rounded-3xl absolute flex'><Image src={Homeimg} className='mx-2' width={35}/>Home</a> */}
+          <a href='/projects' className='lg:right-96   sm:ml-[17rem] sm:mt-[25.5rem] sm:w-[8rem] sm:h-[2.8rem] sm:z-50 items-center  lg:h-12 lg:mt-5 lg:w-36  lg:text-lg font-semibold bg-red-300 rounded-3xl absolute flex'><Image src={Projectimg} className='mx-2' width={35}/>Projects</a>
+          <a href='/about' className='lg:right-60 sm:ml-[17rem] sm:h-[2.8rem] sm:mt-5 sm:z-50 sm:w-28 items-center lg:h-12  mt-5 lg:w-32 lg:text-lg  font-semibold bg-red-300 rounded-3xl absolute flex'><Image src={AboutImg} className='mx-2' width={35}/>About</a>
+          <a href='/contact' className='right-20 lg:visible  items-center h-12 mt-5 w-36  text-lg font-semibold bg-red-300 rounded-3xl absolute flex'><Image src={ContactImg} className='mx-2' width={35}/>Contact</a>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+        <div className='pattern2 flex flex-row'>
+        <div className='pattern  h-96 w-full absolute  text-black '>
+        <button className='right-8 mt-10 fixed  bottom-6 rounded-full w-42 h-12 z-50'><a href='/contact'>Get in touch</a></button>
+        </div>
+          <Image src={Man} className='lg:mx-60 sm:-mx-6 mt-10 z-50 lg:w-[32rem] sm:w-[18rem]' alt="Picture of me" />
+          <h1 className='lg:mt-60 lg:text-5xl lg:right-[13rem] sm:mt-20 sm:text-3xl lg:w-[20rem]  sm:w-36 sm:right-8 absolute text-black font-extrabold'>I&lsquo;m Adarsh </h1>
+        <h1 className='lg:mt-[22.3rem] lg:text-5xl lg:right-50 sm:mt-40 sm:text-3xl lg:w-[30rem] sm:w-32 sm:right-12 absolute text-black font-bold'>A Web Developer</h1>
+        </div>
+        <div>
+        </div>
+        <div className='bg-green-300 '>
+        <div className='w-full  text-center  text-black'>
+          <br/>
+           <h1 className='lg:text-5xl sm:text-3xl font-extrabold'> ⌈ My Journey ⌋</h1>
+        </div>
+        <VerticalTimeline lineColor='transparent' className='lg:top-12 sm:top-0 '>
+        <VerticalTimelineElement visible={true} contentStyle={{borderBottom :'8px',borderSty1e :' solid',boxShadow: 'none',borderRadius:"25px",alignContent:"center",textAlign:"center",margin:"0px"}}>
+          <div className='caret-red-300 w-full sm:h-20 bg-lime-300 rounded-2xl'>
+            <h1 className='text-2xl font-bold'>Got into a College</h1>
+            <p>After 12, I choose Engineering😅</p>
+          </div>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement visible={true}  contentStyle={{borderBottom :'8px',borderSty1e :' solid',boxShadow: 'none',borderRadius:"25px",alignContent:"center",textAlign:"center",margin:"0px"}}>
+          <div className='caret-red-300 w-full lg:h-20 sm:h-28 bg-cyan-400  rounded-2xl'>
+            <h1 className='text-2xl font-bold  '>Begun my journey of Programming</h1>
+            <p>Started with C/c++ and Web development</p>
+          </div>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement visible={true}  contentStyle={{borderBottom :'8px',borderSty1e :' solid',boxShadow: 'none' ,borderRadius:"25px",alignContent:"center",textAlign:"center",margin:"0px"}}>
+          <div className='caret-red-300 w-full lg:h-20 sm:h-28  bg-orange-300 rounded-2xl'>
+            <h1 className='text-2xl font-bold  '>Started doing Fronted Projects</h1>
+            <p>Built News App,Calculator,Notes app,etc </p>
+          </div>
+        </VerticalTimelineElement>  
+        <VerticalTimelineElement visible={true}  contentStyle={{borderBottom :'8px',borderSty1e :' solid',boxShadow: 'none' ,borderRadius:"25px",alignContent:"center",textAlign:"center",margin:"0px"}}>
+          <div className='caret-red-300 w-full lg:h-20 sm:h-32  bg-green-300 rounded-2xl'>
+            <h1 className='text-2xl font-bold  '>Built typing speed game for Dhishna</h1>
+            <p>&quot;QwertyRumble&quot; event, In which people test their speed.    </p>
+          </div>
+        </VerticalTimelineElement>
+        </VerticalTimeline>
+        </div>
+        </>
+    );
+  }
+      
